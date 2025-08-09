@@ -1,0 +1,10 @@
+CREATE TABLE Budgets (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    UserId INT NOT NULL,
+    Month INT NOT NULL,
+    Year INT NOT NULL,
+    BudgetAmount DECIMAL(12,2) NOT NULL,
+    CreatedAt DATETIME2 DEFAULT SYSDATETIME(),
+    FOREIGN KEY (UserId) REFERENCES Users(Id),
+    CONSTRAINT UQ_Budget UNIQUE(UserId, Month, Year)
+);

@@ -1,0 +1,9 @@
+CREATE TABLE ActivityLogs (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    UserId INT NOT NULL,
+    Action NVARCHAR(100),
+    Details NVARCHAR(1000),
+    IPAddress NVARCHAR(45) NULL,
+    CreatedAt DATETIME2 DEFAULT SYSDATETIME(),
+    FOREIGN KEY (UserId) REFERENCES Users(Id)
+);

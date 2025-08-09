@@ -1,0 +1,10 @@
+CREATE TABLE Income (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    UserId INT NOT NULL,
+    Source NVARCHAR(100),
+    Amount DECIMAL(12,2) NOT NULL,
+    IncomeDate DATE NOT NULL,
+    CreatedAt DATETIME2 DEFAULT SYSDATETIME(),
+    UpdatedAt DATETIME2 NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(Id)
+);
