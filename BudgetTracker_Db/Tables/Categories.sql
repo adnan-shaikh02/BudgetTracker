@@ -1,0 +1,7 @@
+CREATE TABLE Categories (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(50) NOT NULL,
+    UserId INT NULL,
+    IsGlobal BIT NOT NULL DEFAULT 0,
+    FOREIGN KEY (UserId) REFERENCES Users(Id)
+);

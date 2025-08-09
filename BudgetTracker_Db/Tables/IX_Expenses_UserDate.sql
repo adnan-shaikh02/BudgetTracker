@@ -1,0 +1,1 @@
+CREATE INDEX IX_Expenses_UserDate ON Expenses(UserId, ExpenseDate);

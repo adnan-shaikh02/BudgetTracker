@@ -1,0 +1,12 @@
+CREATE TABLE Expenses (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    UserId INT NOT NULL,
+    CategoryId INT NOT NULL,
+    Amount DECIMAL(12,2) NOT NULL,
+    ExpenseDate DATE NOT NULL,
+    Notes NVARCHAR(500),
+    CreatedAt DATETIME2 DEFAULT SYSDATETIME(),
+    UpdatedAt DATETIME2 NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(Id),
+    FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
+);
